@@ -1,0 +1,252 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZADESCUHA_Q002_SRV/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="ZADESCUHA_Q002_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="CostAnalysisOVP2.annotation2.ZADESCUHA_Q002_SRV">
+			<Annotations Target="Metadata.ZADESCUHA_Q002Result">
+				<Annotation Term="UI.SelectionVariant" Qualifier="TrendCost">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Cost Upkeep per Hectare"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="TrendCost">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#TrendCost</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="TrendCost">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#TrendCost"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPCostAct"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#TrendCost"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="TrendCost">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>ACTAMT</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="ACTAMT"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCostAct"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCPER3</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCPER3"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="TotalHA">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="HA_F"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="TotalCost">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#TotalHA</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="TotalCost">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Total Cost by HA"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="TotalCost">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#TotalCost"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPCostAct"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#TotalCost"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="TotalCost">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>ACTAMT</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="ACTAMT"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCostAct"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCYEAR</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="TotalHA">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#TotalHA</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="TotalHA">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Total Hectare"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="TotalHA">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#TotalHA"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPHA"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#TotalHA"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="TotalHA">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>HA</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="HA"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPHA"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCYEAR</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPYear">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A0FISCYEAR"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPPeriode">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A0FISCPER3"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCountry">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESCUHAZCHCOUNTRY"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPRegion">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESCUHAZCHREGION"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCompany">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A0COMP_CODE_T"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPEstate">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESCUHAZCHESTATE"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPPlant">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESCUHAZCHPLANT"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCostAct">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="ACTAMT"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCostHa">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="ACTPERHCT"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPBudgetAct">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="BDGTANT"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPBudgetHA">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="BDGTPERHCT"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPHA">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="HA"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,312 @@
+{
+	"_version": "1.7.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "ZAL.CostAnalysisOVP3",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"dataSources": {
+			"ZADESTCPC_Q004_SRV": {
+				"uri": "/sap/opu/odata/sap/ZADESTCPC_Q004_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"annotations": [
+						"localAnnotations_1",
+						"annotation1"
+					],
+					"localUri": "localService/ZADESTCPC_Q004_SRV/metadata.xml"
+				}
+			},
+			"localAnnotations_1": {
+				"uri": "localService/ZADESTCPC_Q004_SRV/localAnnotations_1.xml",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZADESTCPC_Q004_SRV/localAnnotations_1.xml"
+				}
+			},
+			"annotation1": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/annotation1.xml",
+				"settings": {
+					"localUri": "annotations/annotation1.xml"
+				}
+			},
+			"CostUpkeep1": {
+				"uri": "/sap/opu/odata/sap/ZADESCUHA_Q002_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"CostUpkeep1Anno0"
+					],
+					"localUri": "localService/CostUpkeep1/metadata.xml"
+				}
+			},
+			"CostUpkeep1Anno0": {
+				"uri": "localService/CostUpkeep1/CostUpkeep1_annotations_0.xml",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/CostUpkeep1/CostUpkeep1_annotations_0.xml"
+				}
+			},
+			"CostCollectionTable": {
+				"uri": "/sap/opu/odata/sap/ZADESTCPC_Q005_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"CostCollectionTableAnno0"
+					],
+					"localUri": "localService/CostCollectionTable/metadata.xml"
+				}
+			},
+			"CostCollectionTableAnno0": {
+				"uri": "localService/CostCollectionTable/CostCollectionTable_annotations_0.xml",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/CostCollectionTable/CostCollectionTable_annotations_0.xml"
+				}
+			},
+			"ZADESCUHA_Q003_SRV": {
+				"uri": "/sap/opu/odata/sap/ZADESCUHA_Q003_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZADESCUHA_Q003_SRV/metadata.xml",
+					"annotations": [
+						"annotation4"
+					]
+				}
+			},
+			"annotation4": {
+				"type": "ODataAnnotation",
+				"uri": "annotations/annotation4.xml",
+				"settings": {
+					"localUri": "annotations/annotation4.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "${sap.ui5.dist.version}",
+			"libs": {
+				"sap.ovp": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"preload": true,
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"ZADESTCPC_Q004_SRV": {
+				"dataSource": "ZADESTCPC_Q004_SRV",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			},
+			"CostUpkeep1": {
+				"dataSource": "CostUpkeep1",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			},
+			"CostCollectionTable": {
+				"dataSource": "CostCollectionTable",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			},
+			"CosUpkeepTbl": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZADESCUHA_Q003_SRV",
+				"preload": true
+			}
+		},
+		"extends": {
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "ZADESTCPC_Q004_SRV",
+		"globalFilterEntityType": "ZADESTCPC_Q004Result",
+		"containerLayout": "resizable",
+		"enableLiveFilter": true,
+		"considerAnalyticalParameters": false,
+		"cards": {
+			"card00": {
+				"model": "ZADESTCPC_Q004_SRV",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card00_title}}",
+					"subTitle": "{{card00_subTitle}}",
+					"entitySet": "ZADESTCPC_Q004Results",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#KPICROP",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#KPICROP",
+					"navigation": "dataPointNav",
+					"stopResizing": true,
+					"defaultSpan": {
+						"rows": 1,
+						"cols": 1
+					}
+				}
+			},
+			"card01": {
+				"model": "ZADESTCPC_Q004_SRV",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card01_title}}",
+					"subTitle": "{{card01_subTitle}}",
+					"entitySet": "ZADESTCPC_Q004Results",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#KPICOSTCROP",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#KPICROP",
+					"navigation": "dataPointNav"
+				}
+			},
+			"card02": {
+				"model": "CostUpkeep1",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card02_title}}",
+					"subTitle": "{{card02_subTitle}}",
+					"entitySet": "ZADESCUHA_Q002Results",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#TotalHA",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalHA",
+					"navigation": "dataPointNav",
+					"stopResizing": true,
+					"defaultSpan": {
+						"rows": 1,
+						"cols": 1
+					}
+				}
+			},
+			"card03": {
+				"model": "CostUpkeep1",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card03_title}}",
+					"subTitle": "{{card03_subTitle}}",
+					"entitySet": "ZADESCUHA_Q002Results",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#TotalCost",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalHA",
+					"navigation": "dataPointNav"
+				}
+			},
+			"card04": {
+				"model": "ZADESTCPC_Q004_SRV",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card04_title}}",
+					"subTitle": "{{card04_subTitle}}",
+					"entitySet": "ZADESTCPC_Q004Results",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#COSTTREND",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#KPICROP",
+					"navigation": "dataPointNav",
+					"defaultSpan": {
+						"rows": 6,
+						"cols": 2
+					},
+					"ChartProperties": {
+						"plotArea": {
+							"isSmoothed": true
+						}
+					}
+				}
+			},
+			"card06": {
+				"model": "CostUpkeep1",
+				"template": "sap.ovp.cards.charts.analytical",
+				"settings": {
+					"title": "{{card06_title}}",
+					"subTitle": "{{card06_subTitle}}",
+					"entitySet": "ZADESCUHA_Q002Results",
+					"kpiAnnotationPath": "com.sap.vocabularies.UI.v1.KPI#TrendCost",
+					"identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#TotalHA",
+					"navigation": "dataPointNav",
+					"defaultSpan": {
+						"rows": 6,
+						"cols": 2
+					},
+					"ChartProperties": {
+						"plotArea": {
+							"isSmoothed": true
+						}
+					}
+				}
+			},
+			"card07": {
+				"model": "CostCollectionTable",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card07_title}}",
+					"subTitle": "{{card07_subTitle}}",
+					"entitySet": "ZADESTCPC_Q005Results",
+					"sortBy": "A0FISCPER3",
+					"sortOrder": "descending",
+					"addODataSelect": true,
+					"stopResizing": false,
+					"defaultSpan": {
+						"rows": 6,
+						"cols": 4
+					}
+				}
+			},
+			"card08": {
+				"model": "CosUpkeepTbl",
+				"template": "sap.ovp.cards.table",
+				"settings": {
+					"title": "{{card08_title}}",
+					"subTitle": "{{card08_subTitle}}",
+					"entitySet": "ZADESCUHA_Q003Results",
+					"sortBy": "A0FISCPER3",
+					"sortOrder": "descending",
+					"addODataSelect": true,
+					"stopResizing": true,
+					"defaultSpan": {
+						"rows": 6,
+						"cols": 3
+					}
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zcostanalysis/webapp",
+		"_version": "1.1.0"
+	}
+}

@@ -1,0 +1,33 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZADESCUHA_Q003_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZADESCUHA_Q003Result" sap:semantics="aggregate" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:updatable="false"/><Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true"
+					sap:label="Totaled Properties" sap:updatable="false"/><Property Name="A0FISCPER3" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Posting period" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHGRPTYP" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Group Type" sap:updatable="false"/><Property Name="A0COMP_CODE_T" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:filterable="false" sap:label="Company code" sap:text="A0COMP_CODE_T" sap:updatable="false"/><Property Name="A0CURRENCY_T" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false" sap:filterable="false"
+					sap:label="Currency" sap:text="A0CURRENCY_T" sap:updatable="false" sap:semantics="currency-code"/><Property Name="A0FISCYEAR" Type="Edm.String" MaxLength="7" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Fiscal year"
+					sap:updatable="false"/><Property Name="A0UNIT_T" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false" sap:filterable="false"
+					sap:label="Unit of Measure" sap:text="A0UNIT_T" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHBLKTYP" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Block Type" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHCOUNTRY" Type="Edm.String" MaxLength="30" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Country" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHDIVISION" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Division" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHESTATE" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Estate" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHPLANT" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Plant" sap:updatable="false"/><Property Name="A4ZADESCUHAZCHREGION" Type="Edm.String" MaxLength="25" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Region" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUI9RE" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Actual Amount" sap:text="A003N8BXHSLMTJRSMHWNOUI9RE_F" sap:unit="A0CURRENCY_T" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUI9RE_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Actual Amount (Formatted)" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUIG2Y" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Budget Amount" sap:text="A003N8BXHSLMTJRSMHWNOUIG2Y_F" sap:unit="A0CURRENCY_T" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUIG2Y_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Budget Amount (Formatted)" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUIMEI" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Actual Cost Per Hectare" sap:text="A003N8BXHSLMTJRSMHWNOUIMEI_F" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUIMEI_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Actual Cost Per Hectare (Formatted)" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUISQ2" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Budget Cost Per Hectare" sap:text="A003N8BXHSLMTJRSMHWNOUISQ2_F" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUISQ2_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Budget Cost Per Hectare (Formatted)" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUIZ1M" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Hectare" sap:text="A003N8BXHSLMTJRSMHWNOUIZ1M_F" sap:updatable="false"/><Property Name="A003N8BXHSLMTJRSMHWNOUIZ1M_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Hectare (Formatted)" sap:updatable="false"/></EntityType>
+			<EntityContainer Name="ZADESCUHA_Q003_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZADESCUHA_Q003Results" EntityType="ZADESCUHA_Q003_SRV.ZADESCUHA_Q003Result" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZADESCUHA_Q003_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZADESCUHA_Q003_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

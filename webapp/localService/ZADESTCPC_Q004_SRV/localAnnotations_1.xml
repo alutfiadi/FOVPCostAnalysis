@@ -1,0 +1,360 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZADESTCPC_Q004_SRV/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="ZADESTCPC_Q004_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="CostAnalysisOVP2.annotation0.ZADESTCPC_Q004_SRV">
+			<Annotations Target="Metadata.ZADESTCPC_Q004Result">
+				<Annotation Term="UI.PresentationVariant" Qualifier="COSTTREND">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#COSTTREND</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="COSTTREND">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>COSTACT</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="COSTACT"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCPER3</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCPER3"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Title" String="Cost Collection per Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="COSTTREND">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#COSTTREND"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPCostCrop"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#COSTTREND"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="COSTTREND">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Cost Collection per Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>A0FISCYEAR</PropertyPath>
+						<PropertyPath>A0COMP_CODE</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="Cost Analysis"/>
+						<PropertyValue Property="TypeNamePlural" String="Cost Analysis"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A0FISCYEAR"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADESTCPCZCHGRPTYP"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BUDGET"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BUDGETCROP"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="KPICOSTCROP">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#KPICOSTCROP"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPCostCrop"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#KPICOSTCROP"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="KPICOSTCROP">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Cost Per Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="KPICOSTCROP">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Property" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Descending" Bool="false"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#KPICOSTCROP</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="KPICOSTCROP">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Title" String="Cost per Crop by Year"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>COSTACTCROP</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="COSTACTCROP"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCostCrop"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCYEAR</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="KPICOSTTREND">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Line"/>
+						<PropertyValue Property="Title" String="Cost per Crop by Year"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>COSTACTCROP</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="COSTACTCROP"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCostCrop"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCPER3</PropertyPath>
+								<PropertyPath>A0FISCYEAR</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCPER3"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Series"/>
+								</Record>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="KPICROP">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CROP"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.KPI" Qualifier="KPICROP">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#KPICROP"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPCrop"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#KPICROP"/>
+								<PropertyValue Property="SemanticObject" String="test"/>
+								<PropertyValue Property="Action" String="test"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="KPICROP">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="KPI CROP"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="KPICROP">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Property" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Descending" Bool="false"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#KPICROP</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Text" String="Total Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="KPICROP">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>CROP</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="CROP"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCrop"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A0FISCYEAR</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A0FISCYEAR"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCostAct">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="COSTACT"/>
+						<PropertyValue Property="Title" String="Cost Actual"/>
+						<PropertyValue Property="Description" String="Cost Actual"/>
+						<PropertyValue Property="TargetValue" Path="BUDGET"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCostCrop">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="COSTACTCROP"/>
+						<PropertyValue Property="Title" String="Cost Actual Per Crop"/>
+						<PropertyValue Property="Description" String="Cost Actual Per Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPBudget">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="BUDGET"/>
+						<PropertyValue Property="Title" String="Budget"/>
+						<PropertyValue Property="Description" String="Budget"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPBudgetCrop">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="BUDGETCROP"/>
+						<PropertyValue Property="Title" String="Budget Per Crop"/>
+						<PropertyValue Property="Description" String="Budget Per Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCrop">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="CROP"/>
+						<PropertyValue Property="Title" String="Crop"/>
+						<PropertyValue Property="Description" String="Crop"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPYear">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A0FISCYEAR"/>
+						<PropertyValue Property="Title" String="Year"/>
+						<PropertyValue Property="Description" String="Year"/>
+					</Record>
+					<Annotation Term="Common.Label" String="Year"/>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPRegion">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESTCPCZCHREGION"/>
+						<PropertyValue Property="Title" String="Region"/>
+						<PropertyValue Property="Description" String="Region"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCompanyCode">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A0COMP_CODE"/>
+						<PropertyValue Property="Title" String="Company Code"/>
+						<PropertyValue Property="Description" String="Company Code"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPEstate">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESTCPCZCHESTATE"/>
+						<PropertyValue Property="Title" String="Estate"/>
+						<PropertyValue Property="Description" String="Estate"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPPlant">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESTCPCZCHPLANT"/>
+						<PropertyValue Property="Title" String="Plant"/>
+						<PropertyValue Property="Description" String="Plant"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPGroup">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADESTCPCZCHGRPTYP"/>
+						<PropertyValue Property="Title" String="Group"/>
+						<PropertyValue Property="Description" String="Group"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

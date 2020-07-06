@@ -1,0 +1,32 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZADESTCPC_Q004_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZADESTCPC_Q004Result" sap:semantics="aggregate" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:updatable="false"/><Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true"
+					sap:label="Totaled Properties" sap:updatable="false"/><Property Name="A0FISCYEAR" Type="Edm.String" MaxLength="7" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Fiscal year"
+					sap:updatable="false"/><Property Name="A0FISCPER3" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Posting period" sap:updatable="false"/><Property Name="A4ZADESTCPCZCHREGION" Type="Edm.String" MaxLength="25" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Region" sap:updatable="false"/><Property Name="A0COMP_CODE" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false" sap:label="Company code"
+					sap:updatable="false"/><Property Name="A4ZADESTCPCZCHESTATE" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Estate" sap:updatable="false"/><Property Name="A4ZADESTCPCZCHPLANT" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Plant" sap:updatable="false"/><Property Name="A4ZADESTCPCZCHGRPTYP" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Group Type" sap:updatable="false"/><Property Name="A0CURRENCY_T" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false" sap:filterable="false"
+					sap:label="Currency" sap:text="A0CURRENCY_T" sap:updatable="false" sap:semantics="currency-code"/><Property Name="A0UNIT_T" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false" sap:filterable="false"
+					sap:label="Unit of Measure" sap:text="A0UNIT_T" sap:updatable="false"/><Property Name="A4ZADESTCPCZCHCATEGORY" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Category" sap:updatable="false"/><Property Name="A4ZADESTCPCZCHDIVISION" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:label="Division" sap:updatable="false"/><Property Name="COSTACT" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Actual Amount" sap:text="COSTACT_F" sap:unit="A0CURRENCY_T" sap:updatable="false"/><Property Name="COSTACT_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Actual Amount (Formatted)" sap:updatable="false"/><Property Name="COSTACTCROP" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Actual Cost per Crop" sap:text="COSTACTCROP_F" sap:updatable="false"/><Property Name="COSTACTCROP_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Actual Cost per Crop (Formatted)" sap:updatable="false"/><Property Name="BUDGET" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Budget Amount" sap:text="BUDGET_F" sap:unit="A0CURRENCY_T" sap:updatable="false"/><Property Name="BUDGET_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Budget Amount (Formatted)" sap:updatable="false"/><Property Name="BUDGETCROP" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Budget Amount per Crop" sap:text="BUDGETCROP_F" sap:updatable="false"/><Property Name="BUDGETCROP_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:label="Budget Amount per Crop (Formatted)" sap:updatable="false"/><Property Name="CROP" Type="Edm.Decimal" Precision="42" Scale="1" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:label="Crop" sap:text="CROP_F" sap:unit="A0UNIT_T" sap:updatable="false"/><Property Name="CROP_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:label="Crop (Formatted)"
+					sap:updatable="false"/></EntityType>
+			<EntityContainer Name="ZADESTCPC_Q004_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZADESTCPC_Q004Results" EntityType="ZADESTCPC_Q004_SRV.ZADESTCPC_Q004Result" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZADESTCPC_Q004_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZADESTCPC_Q004_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
